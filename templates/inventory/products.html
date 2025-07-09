@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<h2>Products</h2>
+<a href="{{ url_for('inventory.add_product') }}" class="btn">Add Product</a>
+<table>
+    <tr><th>ID</th><th>Name</th><th>SKU</th><th>Qty</th><th>Min Stock</th><th>Unit Price</th><th>Location</th><th>Actions</th></tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.sku }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.min_stock_alert }}</td>
+        <td>{{ product.unit_price }}</td>
+        <td>{{ product.location }}</td>
+        <td>
+            <a href="{{ url_for('inventory.product_detail', product_id=product.id) }}">Details</a> |
+            <a href="{{ url_for('inventory.edit_product', product_id=product.id) }}">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

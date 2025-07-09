@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Inventory Dashboard{% endblock %}
+{% block content %}
+<h2>Inventory Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('inventory.inventories') }}">View Inventories</a></li>
+    <li><a href="{{ url_for('inventory.products') }}">View Products</a></li>
+    <li><a href="{{ url_for('inventory.add_product') }}">Add Product</a></li>
+    <li><a href="{{ url_for('inventory.history') }}">View History</a></li>
+</ul>
+{% endblock %}

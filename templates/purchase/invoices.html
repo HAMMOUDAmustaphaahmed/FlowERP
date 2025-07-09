@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Invoices{% endblock %}
+{% block content %}
+<h2>Invoices</h2>
+<table>
+    <tr>
+        <th>ID</th><th>Number</th><th>Status</th><th>Due Date</th><th>Paid</th>
+    </tr>
+    {% for invoice in invoices %}
+    <tr>
+        <td>{{ invoice.id }}</td>
+        <td>{{ invoice.number }}</td>
+        <td>{{ invoice.status }}</td>
+        <td>{{ invoice.due_date }}</td>
+        <td>{{ invoice.paid }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

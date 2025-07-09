@@ -1,0 +1,20 @@
+<nav style="background:#343a40; color:#fff; padding:1rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+        <div>
+            <a href="{{ url_for('main.index') }}" style="color:#fff; font-weight:bold; text-decoration:none;">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" style="height:32px; vertical-align:middle;">
+                FlowERP
+            </a>
+        </div>
+        <div>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('main.dashboard') }}" style="color:#fff; margin-right:1rem;">Dashboard</a>
+                <a href="{{ url_for('main.profile') }}" style="color:#fff; margin-right:1rem;">Profile</a>
+                <a href="{{ url_for('auth.logout') }}" style="color:#fff;">Logout</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" style="color:#fff; margin-right:1rem;">Login</a>
+                <a href="{{ url_for('auth.signup') }}" style="color:#fff;">Sign Up</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

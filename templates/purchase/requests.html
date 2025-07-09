@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Purchase Requests{% endblock %}
+{% block content %}
+<h2>Purchase Requests</h2>
+<a href="{{ url_for('purchase.add_request') }}" class="btn">Create Request</a>
+<table>
+    <tr>
+        <th>ID</th><th>Number</th><th>Status</th><th>Department</th><th>User</th>
+    </tr>
+    {% for req in requests %}
+    <tr>
+        <td>{{ req.id }}</td>
+        <td>{{ req.number }}</td>
+        <td>{{ req.status }}</td>
+        <td>{{ req.department_id }}</td>
+        <td>{{ req.user_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

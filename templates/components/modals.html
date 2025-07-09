@@ -1,0 +1,17 @@
+<!-- Example modal component -->
+<div id="modal-example" class="modal" style="display:none;">
+    <div class="modal-content" style="background:#fff; padding:2rem; border-radius:8px; max-width:500px; margin:auto;">
+        <span class="close" onclick="closeModal('modal-example')" style="float:right; cursor:pointer;">&times;</span>
+        <h2>Modal Title</h2>
+        <p>Modal body content goes here.</p>
+        <button onclick="closeModal('modal-example')" class="btn">Close</button>
+    </div>
+</div>
+<script>
+function closeModal(id) {
+    document.getElementById(id).style.display='none';
+}
+function showModal(id) {
+    document.getElementById(id).style.display='block';
+}
+</script>

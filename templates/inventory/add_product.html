@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Product Detail{% endblock %}
+{% block content %}
+<h2>Product Details</h2>
+<ul>
+    <li><b>Name:</b> {{ product.name }}</li>
+    <li><b>SKU:</b> {{ product.sku }}</li>
+    <li><b>Description:</b> {{ product.description }}</li>
+    <li><b>Quantity:</b> {{ product.quantity }}</li>
+    <li><b>Min Stock Alert:</b> {{ product.min_stock_alert }}</li>
+    <li><b>Unit Price:</b> {{ product.unit_price }}</li>
+    <li><b>Location:</b> {{ product.location }}</li>
+</ul>
+<a href="{{ url_for('inventory.edit_product', product_id=product.id) }}" class="btn">Edit Product</a>
+{% endblock %}

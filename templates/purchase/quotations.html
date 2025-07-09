@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Quotations{% endblock %}
+{% block content %}
+<h2>Quotations</h2>
+<table>
+    <tr>
+        <th>ID</th><th>Number</th><th>Supplier</th><th>Status</th><th>Total</th>
+    </tr>
+    {% for quotation in quotations %}
+    <tr>
+        <td>{{ quotation.id }}</td>
+        <td>{{ quotation.number }}</td>
+        <td>{{ quotation.supplier_name }}</td>
+        <td>{{ quotation.status }}</td>
+        <td>{{ quotation.total_amount }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

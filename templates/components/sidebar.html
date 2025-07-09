@@ -1,0 +1,13 @@
+<aside style="width:220px; background:#f5f5f5; padding:1rem; height:100vh; position:fixed;">
+    <nav>
+        <ul style="list-style:none; padding:0;">
+            <li><a href="{{ url_for('main.dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('inventory.dashboard') }}">Inventory</a></li>
+            <li><a href="{{ url_for('purchase.dashboard') }}">Purchases</a></li>
+            <li><a href="{{ url_for('department.dashboard') }}">Departments</a></li>
+            {% if current_user.is_authenticated and current_user.role == 'admin' %}
+            <li><a href="{{ url_for('admin.dashboard') }}">Admin</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</aside>

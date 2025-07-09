@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Create Purchase Request{% endblock %}
+{% block content %}
+<h2>Create Purchase Request</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>{{ form.number.label }}<br>{{ form.number(size=32) }}</div>
+    <div>{{ form.department_id.label }}<br>{{ form.department_id() }}</div>
+    <div>{{ form.date_requested.label }}<br>{{ form.date_requested() }}</div>
+    <div>{{ form.date_required.label }}<br>{{ form.date_required() }}</div>
+    <div>{{ form.priority.label }}<br>{{ form.priority() }}</div>
+    <div>{{ form.description.label }}<br>{{ form.description(rows=3, cols=40) }}</div>
+    <div>{{ form.items.label }}<br>{{ form.items(rows=3, cols=40) }}</div>
+    <div>{{ form.submit(class_="btn") }}</div>
+</form>
+{% endblock %}

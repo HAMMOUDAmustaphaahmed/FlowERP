@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Purchase Dashboard{% endblock %}
+{% block content %}
+<h2>Purchase Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('purchase.requests_list') }}">Purchase Requests</a></li>
+    <li><a href="{{ url_for('purchase.quotations') }}">Quotations</a></li>
+    <li><a href="{{ url_for('purchase.invoices') }}">Invoices</a></li>
+    <li><a href="{{ url_for('purchase.delivery_notes') }}">Delivery Notes</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Delivery Notes{% endblock %}
+{% block content %}
+<h2>Delivery Notes</h2>
+<table>
+    <tr>
+        <th>ID</th><th>Number</th><th>Purchase Request</th><th>Received</th><th>Date Received</th>
+    </tr>
+    {% for note in notes %}
+    <tr>
+        <td>{{ note.id }}</td>
+        <td>{{ note.number }}</td>
+        <td>{{ note.purchase_request_id }}</td>
+        <td>{{ note.received }}</td>
+        <td>{{ note.date_received }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

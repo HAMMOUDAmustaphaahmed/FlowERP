@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Inventories{% endblock %}
+{% block content %}
+<h2>Inventories</h2>
+<table>
+    <tr><th>ID</th><th>Name</th><th>Description</th><th>Department</th></tr>
+    {% for inventory in inventories %}
+    <tr>
+        <td>{{ inventory.id }}</td>
+        <td>{{ inventory.name }}</td>
+        <td>{{ inventory.description }}</td>
+        <td>{{ inventory.department_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

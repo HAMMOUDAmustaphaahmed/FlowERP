@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Edit Product{% endblock %}
+{% block content %}
+<h2>Edit Product</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>{{ form.name.label }}<br>{{ form.name(size=40) }}</div>
+    <div>{{ form.description.label }}<br>{{ form.description(rows=3, cols=40) }}</div>
+    <div>{{ form.sku.label }}<br>{{ form.sku(size=32) }}</div>
+    <div>{{ form.quantity.label }}<br>{{ form.quantity() }}</div>
+    <div>{{ form.min_stock_alert.label }}<br>{{ form.min_stock_alert() }}</div>
+    <div>{{ form.unit_price.label }}<br>{{ form.unit_price() }}</div>
+    <div>{{ form.location.label }}<br>{{ form.location(size=32) }}</div>
+    <div>{{ form.inventory_id.label }}<br>{{ form.inventory_id() }}</div>
+    <div>{{ form.submit(class_="btn") }}</div>
+</form>
+{% endblock %}

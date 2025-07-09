@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Department Dashboard{% endblock %}
+{% block content %}
+<h2>Department Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('department.list_departments') }}">View Departments</a></li>
+    <li><a href="{{ url_for('department.add_department') }}">Add Department</a></li>
+</ul>
+{% endblock %}

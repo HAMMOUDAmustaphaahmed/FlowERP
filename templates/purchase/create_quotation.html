@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Create Quotation{% endblock %}
+{% block content %}
+<h2>Create Quotation</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>{{ form.number.label }}<br>{{ form.number(size=32) }}</div>
+    <div>{{ form.supplier_name.label }}<br>{{ form.supplier_name(size=32) }}</div>
+    <div>{{ form.supplier_email.label }}<br>{{ form.supplier_email(size=32) }}</div>
+    <div>{{ form.supplier_phone.label }}<br>{{ form.supplier_phone(size=32) }}</div>
+    <div>{{ form.items.label }}<br>{{ form.items(rows=3, cols=40) }}</div>
+    <div>{{ form.total_amount.label }}<br>{{ form.total_amount() }}</div>
+    <div>{{ form.payment_terms.label }}<br>{{ form.payment_terms(size=32) }}</div>
+    <div>{{ form.delivery_time.label }}<br>{{ form.delivery_time(size=32) }}</div>
+    <div>{{ form.status.label }}<br>{{ form.status() }}</div>
+    <div>{{ form.submit(class_="btn") }}</div>
+</form>
+{% endblock %}
