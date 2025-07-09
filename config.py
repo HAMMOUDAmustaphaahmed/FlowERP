@@ -57,9 +57,14 @@ class ProductionConfig(Config):
         file_handler.setLevel(logging.INFO)
         app.logger.addHandler(file_handler)
 
+# ---- ADD THIS ----
+class DefaultConfig(DevelopmentConfig):
+    pass
+
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-    'default': DevelopmentConfig
+    'default': DefaultConfig
 }
+# ------------------
