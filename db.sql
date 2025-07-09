@@ -1,21 +1,3 @@
--- Users table
-CREATE TABLE user (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(64) NOT NULL UNIQUE,
-    email VARCHAR(120) NOT NULL UNIQUE,
-    first_name VARCHAR(64),
-    last_name VARCHAR(64),
-    password_hash VARCHAR(128) NOT NULL,
-    role ENUM('admin', 'manager', 'employee', 'user') DEFAULT 'user',
-    is_active BOOLEAN DEFAULT TRUE,
-    company_id INT,
-    department_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (company_id) REFERENCES company(id),
-    FOREIGN KEY (department_id) REFERENCES department(id)
-);
-
 -- Company table
 CREATE TABLE company (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,6 +45,24 @@ CREATE TABLE product (
     FOREIGN KEY (inventory_id) REFERENCES inventory(id)
 );
 
+-- Users table (note: user is a reserved keyword, use backticks)
+CREATE TABLE `user` (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(64) NOT NULL UNIQUE,
+    email VARCHAR(120) NOT NULL UNIQUE,
+    first_name VARCHAR(64),
+    last_name VARCHAR(64),
+    password_hash VARCHAR(128) NOT NULL,
+    role ENUM('admin', 'manager', 'employee', 'user') DEFAULT 'user',
+    is_active BOOLEAN DEFAULT TRUE,
+    company_id INT,
+    department_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (company_id) REFERENCES company(id),
+    FOREIGN KEY (department_id) REFERENCES department(id)
+);
+
 -- Purchase Request table
 CREATE TABLE purchase_request (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -77,7 +77,7 @@ CREATE TABLE purchase_request (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (department_id) REFERENCES department(id),
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    FOREIGN KEY (user_id) REFERENCES `user`(id)
 );
 
 -- Purchase Request Item table
