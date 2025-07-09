@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}System Settings{% endblock %}
+{% block content %}
+<h2>System Settings</h2>
+<form method="POST">
+    <!-- Add system settings fields here -->
+    <div>
+        <label>Site Maintenance Mode:</label>
+        <input type="checkbox" name="maintenance_mode">
+    </div>
+    <div>
+        <button type="submit" class="btn">Save</button>
+    </div>
+</form>
+{% endblock %}

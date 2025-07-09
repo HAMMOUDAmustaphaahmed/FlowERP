@@ -1,0 +1,18 @@
+/* Dashboard-specific styles */
+.dashboard-header {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.dashboard-cards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.dashboard-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+    flex: 1 1 200px;
+    min-width: 180px;
+}

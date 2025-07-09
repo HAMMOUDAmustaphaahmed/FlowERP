@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+{% block content %}
+<h2>Settings</h2>
+<form method="POST">
+    <!-- Implement user settings form here -->
+    <div>
+        <label>Email notifications:</label>
+        <input type="checkbox" name="email_notifications" {% if current_user.email_notifications %}checked{% endif %}>
+    </div>
+    <div>
+        <button type="submit" class="btn">Save</button>
+    </div>
+</form>
+{% endblock %}

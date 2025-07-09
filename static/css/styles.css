@@ -1,0 +1,15 @@
+/* Main stylesheet for FlowERP */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+a { color: #007bff; text-decoration: none; }
+a:hover { text-decoration: underline; }

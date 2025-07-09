@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Departments{% endblock %}
+{% block content %}
+<h2>Departments</h2>
+<table>
+    <tr><th>ID</th><th>Name</th><th>Description</th><th>Company</th></tr>
+    {% for dept in departments %}
+    <tr>
+        <td>{{ dept.id }}</td>
+        <td>{{ dept.name }}</td>
+        <td>{{ dept.description }}</td>
+        <td>{{ dept.company_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

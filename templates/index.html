@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Welcome to FlowERP{% endblock %}
+{% block content %}
+    <div style="text-align:center; margin-top:3rem;">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" width="120">
+        <h1>Welcome to FlowERP</h1>
+        <p>Modern ERP for your business.</p>
+        <a href="{{ url_for('auth.login') }}" class="btn">Login</a>
+        <a href="{{ url_for('auth.signup') }}" class="btn">Sign Up</a>
+    </div>
+{% endblock %}

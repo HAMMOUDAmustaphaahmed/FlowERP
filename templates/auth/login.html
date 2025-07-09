@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="auth-container">
+    <h2 class="auth-title">Login</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.username.label }}<br>{{ form.username(size=32) }}
+        </div>
+        <div>
+            {{ form.password.label }}<br>{{ form.password(size=32) }}
+        </div>
+        <div>
+            {{ form.remember() }} {{ form.remember.label }}
+        </div>
+        <div>
+            {{ form.submit(class_="btn") }}
+        </div>
+        <a href="{{ url_for('auth.forgot_password') }}">Forgot Password?</a>
+    </form>
+</div>
+{% endblock %}

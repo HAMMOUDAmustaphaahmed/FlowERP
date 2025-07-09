@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>My Profile</h2>
+<ul>
+    <li><b>Username:</b> {{ current_user.username }}</li>
+    <li><b>Email:</b> {{ current_user.email }}</li>
+    <li><b>First Name:</b> {{ current_user.first_name }}</li>
+    <li><b>Last Name:</b> {{ current_user.last_name }}</li>
+    <li><b>Role:</b> {{ current_user.role }}</li>
+</ul>
+<a href="{{ url_for('main.settings') }}" class="btn">Edit Settings</a>
+{% endblock %}
